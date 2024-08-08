@@ -1,0 +1,116 @@
+/* Define altura total da tela */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Define altura total da tela */
+#mapid { 
+    height: 100%; 
+}
+
+/* Estilo para o menu lateral */
+#sidebar {
+    height: 100%;
+    width: 400px; /* Largura anterior */
+    position: fixed;
+    top: 0;
+    left: -400px; /* Menu começa fora da tela */
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: #818181;
+    z-index: 1000;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilo para a logo */
+#sidebar .logo {
+    text-align: center;
+    padding: 20px;
+}
+
+#sidebar .logo img {
+    max-width: 80%;
+    height: auto;
+}
+
+/* Estilo para os cards no menu lateral */
+#sidebar .card {
+    background-color: #333;
+    color: #fff;
+    margin: 10px 0; /* Remove a margem lateral */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    width: 80%; /* Ajusta a largura dos cards para se adaptarem ao menu lateral */
+}
+
+#sidebar .card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#sidebar .card button {
+    background-color: #9c27b0;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#sidebar .card button:hover {
+    background-color: #9c27b0;
+}
+
+/* Ícone do menu sanduíche */
+#openSidebarBtn {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px; /* Posição inicial à esquerda */
+    z-index: 2000;
+    color: #9c27b0; /* Cor roxa para o ícone */
+    background-color: #333; /* Círculo cinza escuro */
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    transition: left 0.5s; /* Transição suave para movimentação */
+}
+
+/* Estilos do ícone sanduíche dentro do botão */
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #9c27b0; /* Cor roxa para o ícone */
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mover controles de zoom para o lado direito */
+.leaflet-right .leaflet-control {
+    right: 10px;
+}
