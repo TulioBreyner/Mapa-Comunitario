@@ -13,21 +13,40 @@ html, body {
 /* Estilo para o menu lateral */
 #sidebar {
     height: 100%;
-    width: 400px; /* Largura anterior */
+    width: 400px; /* Largura do menu lateral */
     position: fixed;
     top: 0;
     left: -400px; /* Menu começa fora da tela */
     background-color: #111;
     overflow-x: hidden;
+    overflow-y: auto; /* Permite rolagem se o conteúdo for maior que o menu */
     transition: 0.5s;
     padding-top: 60px;
+    padding-bottom: 50px; /* Espaço para o rodapé */
     color: #818181;
     z-index: 1000;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center; /* Centraliza os itens horizontalmente */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura e altura */
 }
+
+/* Ajuste do ícone do menu sanduíche */
+#openSidebarBtn {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px; /* Posição inicial à esquerda */
+    z-index: 2000;
+    color: #9c27b0; /* Cor roxa para o ícone */
+    background-color: #333; /* Círculo cinza escuro */
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    transition: left 0.5s; /* Transição suave para movimentação */
+}
+
 
 /* Estilo para a logo */
 #sidebar .logo {
@@ -71,22 +90,6 @@ html, body {
 
 #sidebar .card button:hover {
     background-color: #9c27b0;
-}
-
-/* Ícone do menu sanduíche */
-#openSidebarBtn {
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 15px;
-    left: 15px; /* Posição inicial à esquerda */
-    z-index: 2000;
-    color: #9c27b0; /* Cor roxa para o ícone */
-    background-color: #333; /* Círculo cinza escuro */
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    transition: left 0.5s; /* Transição suave para movimentação */
 }
 
 /* Estilos do ícone sanduíche dentro do botão */
