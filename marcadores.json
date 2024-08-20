@@ -1,0 +1,238 @@
+{
+    "marcadores": [
+        {
+            "nome": "Associação Voluntária de Combate ao Câncer Ituiutaba",
+            "descricao": "Centro de apoio a luta contra o câncer",
+            "endereco": "Rua 43, 111",
+            "urlRota": "https://www.google.com/maps/place/Associa%C3%A7%C3%A3o+Volunt%C3%A1ria+de+Combate+Ao+C%C3%A2ncer+de+Ituiutaba+Avcci/@-18.9884218,-49.461845,17z",
+            "tipo": "Centro de apoio",
+            "lat": -18.98841,
+            "lng": -49.46187
+        },
+        {
+            "nome": "A.A. Grupo Paz e Amor",
+            "descricao": "Ajuda no tratamento do alcoolismo",
+            "endereco": "Rua Padre Vitorio Zanim, 834",
+            "urlRota": "https://www.google.com/maps/place/A.A.+Grupo+Paz+e+Amor/@-18.9867778,-49.4475934,17z",
+            "tipo": "Centro de apoio",
+            "lat": -18.98674,
+            "lng": -49.44763
+        },
+        {
+            "nome": "Clínica de Vacinas Santa Clara",
+            "descricao": "Posto de vacinação",
+            "endereco": "Rua 28, 1232",
+            "urlRota": "https://www.google.com/maps/place/Cl%C3%ADnica+de+vacinas+Santa+Clara/@-18.9772836,-49.4584113,17z",
+            "tipo": "Posto de vacinação",
+            "lat": -18.97723,
+            "lng": -49.445846
+        },
+        {
+            "nome": "Sanatório Espírita José Dias Machado",
+            "descricao": "Centro de tratamento de doenças psicológicas",
+            "endereco": "Rua 16, 102",
+            "urlRota": "https://www.google.com/maps/place/Sanat%C3%B3rio+Esp%C3%ADrita+Jos%C3%A9+Dias+Machado/@-18.9633195,-49.4684847,17z",
+            "tipo": "Sanatório",
+            "lat": -18.96326,
+            "lng": -49.46847
+        },
+        {
+            "nome": "PSF Maria Vilela",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Av. Presidente Roosevelt, 172",
+            "urlRota": "https://www.google.com/maps/place/PSF+Maria+Vilela/@-18.9598858,-49.458056,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.95979,
+            "lng": -49.45585
+        },
+        {
+            "nome": "Posto de Saúde Tancredo Marquez de Andrade",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Av. Presidente Roosevelt, 1255",
+            "urlRota": "https://www.google.com/maps/place/Posto+De+Sa%C3%BAde+Tancredo+Marquez+De+Andrade/@-18.9597236,-49.4549813,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.95961,
+            "lng": -49.45499
+        },
+        {
+            "nome": "PSF Setor Norte",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Rua 10, 208",
+            "urlRota": "https://www.google.com/maps/place/PSF+Setor+Norte/@-18.9634399,-49.4707162,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.96332,
+            "lng": -49.47069
+        },
+        {
+            "nome": "Posto de Saúde Satélite Andradina",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Rua Alci Andrade, 123",
+            "urlRota": "https://www.google.com/maps/place/Posto+de+Sa%C3%BAde+Sat%C3%A9lite+Andradina/@-18.9605086,-49.4797035,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.96047,
+            "lng": -49.47940
+        },
+        {
+            "nome": "PSF Alvorada",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Rua Mognos, 494",
+            "urlRota": "https://www.google.com/maps/place/PSF+Alvorada/@-18.9698734,-49.484436,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.96982,
+            "lng": -49.48444
+        },
+        {
+            "nome": "PSF Sol Nascente",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Rua Diva Paranaíba de Andrade, 344",
+            "urlRota": "https://www.google.com/maps/place/PSF+Sol+Nascente/@-18.9823661,-49.4906049,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.98230,
+            "lng": -49.49060
+        },
+        {
+            "nome": "PSF 14",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Rua Cônego Ângelo Tardio Bruno, 217",
+            "urlRota": "https://www.google.com/maps/place/PSF+14/@-18.9770826,-49.4768928,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.97696,
+            "lng": -49.47686
+        },
+        {
+            "nome": "Unidade Mista de Saúde II",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Av. 23, 1578",
+            "urlRota": "https://www.google.com/maps/place/Unidade+Mista+de+Sa%C3%BAde+II/@-18.9785594,-49.4622783,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.97851,
+            "lng": -49.46229
+        },
+        {
+            "nome": "Saúde Amiga",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Av. 29, 1351",
+            "urlRota": "https://www.google.com/maps/place/SA%C3%9ADE+AMIGA/@-18.9818447,-49.4617732,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.98177,
+            "lng": -49.46177
+        },
+        {
+            "nome": "Centro de Saúde da Mulher",
+            "descricao": "Centro de apoio a cuidados gerais da mulher",
+            "endereco": "Rua 26, 772",
+            "urlRota": "https://www.google.com/maps/place/Centro+de+Sa%C3%BAde+da+Mulher/@-18.972452,-49.460801,17z",
+            "tipo": "Centro de saúde",
+            "lat": -18.97238,
+            "lng": -49.46082
+        },
+        {
+            "nome": "Previdência Social",
+            "descricao": "Ponto de acesso à aposentadoria",
+            "endereco": "Av. 11, 56",
+            "urlRota": "https://www.google.com/maps/place/PREVID%C3%8ANCIA+SOCIAL/@-18.9702863,-49.4611083,17z",
+            "tipo": "Assistência pública",
+            "lat": -18.97032,
+            "lng": -49.45892
+        },
+        {
+            "nome": "PSF Novo Horizonte",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Rua Esmeralda, 187",
+            "urlRota": "https://www.google.com/maps/place/PSF+Novo+Horizonte/@-18.9751409,-49.4432315,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.97512,
+            "lng": -49.43920
+        },
+        {
+            "nome": "PSF Camargo",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Rua Maria da Conceição Goulart, 726",
+            "urlRota": "https://www.google.com/maps/place/PSF+Camargo/@-18.984466,-49.4466717,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.98447,
+            "lng": -49.44672
+        },
+        {
+            "nome": "Clínica de Vacinação Ituiutaba",
+            "descricao": "Posto de vacinação",
+            "endereco": "Rua 20, 1255",
+            "urlRota": "https://www.google.com/maps/place/Cl%C3%ADnica+de+Vacina%C3%A7%C3%A3o+Ituiutaba/@-18.9744137,-49.4641655,17z",
+            "tipo": "Posto de vacinação",
+            "lat": -18.97434,
+            "lng": -49.46419
+        },
+        {
+            "nome": "PSF Independência",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Rua Nivaldo José Naves, 291",
+            "urlRota": "https://www.google.com/maps/place/PSF+Independ%C3%AAncia/@-18.9717245,-49.4630347,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.97170,
+            "lng": -49.46308
+        },
+        {
+            "nome": "Centro de Reabilitação Infantil",
+            "descricao": "Centro de apoio à reabilitação",
+            "endereco": "Rua 42, 148",
+            "urlRota": "https://www.google.com/maps/place/CENTRO+DE+REABILITA%C3%87%C3%83O+INFANTIL/@-18.9864728,-49.461758,17z",
+            "tipo": "Centro de reabilitação",
+            "lat": -18.98641,
+            "lng": -49.46175
+        },
+        {
+            "nome": "Centro de Reabilitação Fisioterapia",
+            "descricao": "Centro de apoio à reabilitação",
+            "endereco": "Rua 44, 183",
+            "urlRota": "https://www.google.com/maps/place/Centro+de+Reabilita%C3%A7%C3%A3o+Fisioterapia/@-18.9884531,-49.4618793,17z",
+            "tipo": "Centro de reabilitação",
+            "lat": -18.98845,
+            "lng": -49.46188
+        },
+        {
+            "nome": "PSF Buritis",
+            "descricao": "Posto de saúde comunitário",
+            "endereco": "Rua Amazonas, 183",
+            "urlRota": "https://www.google.com/maps/place/PSF+Buritis/@-18.9705794,-49.4458535,17z",
+            "tipo": "Posto de saúde",
+            "lat": -18.97060,
+            "lng": -49.44585
+        },
+        {
+            "nome": "Pronto Atendimento Médico (PAM)",
+            "descricao": "Atendimento de emergência",
+            "endereco": "Av. Napoleão Faissol, 165",
+            "urlRota": "https://www.google.com/maps/place/PAM/@-18.9774336,-49.4543792,17z",
+            "tipo": "Emergência",
+            "lat": -18.97742,
+            "lng": -49.45433
+        },
+        {
+            "nome": "Hospital São José",
+            "descricao": "Hospital geral",
+            "endereco": "Rua 36, 1481",
+            "urlRota": "https://www.google.com/maps/place/Hospital+S%C3%A3o+Jos%C3%A9/@-18.9774944,-49.4650583,17z",
+            "tipo": "Hospital",
+            "lat": -18.97751,
+            "lng": -49.46509
+        },
+        {
+            "nome": "Hospital Regional Antônio Martins",
+            "descricao": "Hospital geral",
+            "endereco": "Rua 22, 1021",
+            "urlRota": "https://www.google.com/maps/place/Hospital+Regional+Ant%C3%B4nio+Martins/@-18.9697256,-49.4653303,17z",
+            "tipo": "Hospital",
+            "lat": -18.96972,
+            "lng": -49.46535
+        },
+        {
+            "nome": "Centro de Diagnóstico",
+            "descricao": "Centro de diagnóstico por imagem",
+            "endereco": "Rua 40, 1823",
+            "urlRota": "https://www.google.com/maps/place/Centro+de+Diagn%C3%B3stico/@-18.979013,-49.4708255,17z",
+            "tipo": "Centro de diagnóstico",
+            "lat": -18.97897,
+            "lng": -49.47076
+        }
+    ]
+}

@@ -1,54 +1,48 @@
-/* Define altura total da tela */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-/* Define altura total da tela */
 #mapid { 
     height: 100%; 
 }
 
-/* Estilo para o menu lateral */
 #sidebar {
     height: 100%;
-    width: 400px; /* Largura do menu lateral */
+    width: 400px; /* largura menu lateral */
     position: fixed;
     top: 0;
-    left: -400px; /* Menu começa fora da tela */
+    left: -400px; /* menu começa fora da tela */
     background-color: #111;
     overflow-x: hidden;
-    overflow-y: auto; /* Permite rolagem se o conteúdo for maior que o menu */
+    overflow-y: auto; /* rolagem se conteúdo maior que menu */
     transition: 0.5s;
     padding-top: 60px;
-    padding-bottom: 50px; /* Espaço para o rodapé */
+    padding-bottom: 50px;
     color: #818181;
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza os itens horizontalmente */
-    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura e altura */
+    align-items: center; 
+    box-sizing: border-box; 
 }
 
-/* Ajuste do ícone do menu sanduíche */
 #openSidebarBtn {
     font-size: 30px;
     cursor: pointer;
     position: fixed;
     top: 15px;
-    left: 15px; /* Posição inicial à esquerda */
+    left: 15px; /* posição inicial à esquerda */
     z-index: 2000;
-    color: #9c27b0; /* Cor roxa para o ícone */
-    background-color: #333; /* Círculo cinza escuro */
+    color: #9c27b0;
+    background-color: #333;
     border-radius: 50%;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    transition: left 0.5s; /* Transição suave para movimentação */
+    transition: left 0.5s;
 }
 
-
-/* Estilo para a logo */
 #sidebar .logo {
     text-align: center;
     padding: 20px;
@@ -59,15 +53,28 @@ html, body {
     height: auto;
 }
 
-/* Estilo para os cards no menu lateral */
+#sidebar .search-menu {
+    width: 80%;
+    margin: 10px 0;
+}
+
+#sidebar .search-menu input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #222;
+    color: #fff;
+}
+
 #sidebar .card {
     background-color: #333;
     color: #fff;
-    margin: 10px 0; /* Remove a margem lateral */
+    margin: 10px 0;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    width: 80%; /* Ajusta a largura dos cards para se adaptarem ao menu lateral */
+    width: 80%;
 }
 
 #sidebar .card img {
@@ -92,11 +99,10 @@ html, body {
     background-color: #9c27b0;
 }
 
-/* Estilos do ícone sanduíche dentro do botão */
 .bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
-    background-color: #9c27b0; /* Cor roxa para o ícone */
+    background-color: #9c27b0;
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -113,7 +119,7 @@ html, body {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Mover controles de zoom para o lado direito */
+/* controles de zoom no mapa pro lado direito */
 .leaflet-right .leaflet-control {
     right: 10px;
 }

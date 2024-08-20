@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Map</title>
-    <!-- Adicionando folhas de estilo do Leaflet -->
+    <title>Mapa Comunitário</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Estilos CSS personalizados -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Favicon -->
     <link rel="icon" href="Imagens/icon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Botão para abrir o menu -->
     <div id="openSidebarBtn" onclick="toggleSidebar(this)">
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -24,28 +20,32 @@
         <div class="logo">
             <img src="Imagens/logo.png" alt="Logo">
         </div>
-        <!-- Menu de filtro -->
+
+        <!-- Barra de pesquisa -->
+        <div class="search-menu">
+            <input type="text" id="searchInput" placeholder="Buscar por nome..." oninput="filterMarkersByName(this.value)">
+        </div>
+
         <div class="filter-menu">
             <label for="typeFilter">Filtrar por tipo:</label>
             <select id="typeFilter">
                 <option value="todos">Todos</option>
-                <!-- Outras opções aqui -->
             </select>
         </div>
-        <!-- Cards serão adicionados aqui -->
 
-        <!-- Rodapé do menu lateral -->
+        <!-- 
+        Cards serão adicionados aqui 
+        -->
+
         <div class="sidebar-footer">
             <p></p>
         </div>
     </div>
 
-    <!-- Container para o mapa -->
     <div id="mapid"></div>
+    
 
-    <!-- Incluindo a biblioteca Leaflet -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <!-- Script JavaScript para criar o mapa e controlar o menu -->
     <script src="script.js"></script>    
 </body>
 </html>

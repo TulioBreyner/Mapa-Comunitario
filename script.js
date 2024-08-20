@@ -1,29 +1,31 @@
-var map; // Variável global para o mapa
-var markers = []; // Array para armazenar marcadores adicionados
+var map;
+var markers = [];
 
 // Função para inicializar o mapa
 function initMap() {
     // Coordenadas iniciais do mapa
     map = L.map('mapid').setView([-18.9846, -49.4614], 13);
 
-    // Adiciona camada do OpenStreetMap ao mapa
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Move os controles de zoom para o lado direito
+    // Controles de zoom no lado direito
     map.zoomControl.setPosition('topright');
 
-    // Adiciona um evento de clique no mapa para adicionar marcadores
     map.on('click', function(event) {
-        openInfoPopup(event.latlng); // Abre o popup para inserir informações do marcador
+        openInfoPopup(event.latlng);
     });
 
-    // Cria o menu de filtro
     createFilterMenu();
+
+    // Adiciona o listener para a busca por nome
+    document.getElementById('searchInput').addEventListener('input', function() {
+        filterMarkersByName(this.value);
+    });
 }
 
-// Função para abrir o popup de informações
+// Função para abrir o popup de informações ao clicar no mapa
 function openInfoPopup(coords) {
     var popupContent = `
         <div>
@@ -43,7 +45,6 @@ function openInfoPopup(coords) {
                 <option value="Farmacia">Farmácia Pública</option>
                 <option value="Abrigo">Abrigo</option>
                 <option value="Reabilitação">Centro de Reabilitação</option>
-                <!-- Adicione mais opções conforme necessário -->
             </select>
             <br>
             <label>Imagem:</label>
@@ -69,7 +70,6 @@ function saveMarkerInfo(lat, lng) {
     var imageUrl = '';
 
     if (imageInput.files && imageInput.files[0]) {
-        // Cria um objeto URL para o arquivo de imagem selecionado
         imageUrl = URL.createObjectURL(imageInput.files[0]);
     }
 
@@ -78,50 +78,43 @@ function saveMarkerInfo(lat, lng) {
         return;
     }
 
-    // Cria e adiciona o marcador ao mapa
     var marker = L.marker([lat, lng]).addTo(map);
-    marker.markerId = generateUniqueId(); // Gera um ID único para o marcador
+    marker.markerId = generateUniqueId();
     marker.name = name;
     marker.description = description;
     marker.address = address;
-    marker.routeUrl = routeUrl; // Salva a URL da rota
-    marker.type = type; // Salva o tipo do local
-    marker.imageUrl = imageUrl; // Salva a URL da imagem
-    marker.hasInfo = true; // Marca o marcador como tendo informações inseridas
-    markers.push(marker); // Adiciona o marcador ao array de marcadores
+    marker.routeUrl = routeUrl;
+    marker.type = type;
+    marker.imageUrl = imageUrl;
+    marker.hasInfo = true;
+    markers.push(marker);
 
-    // Adiciona um popup ao marcador que exibe o nome
     marker.bindPopup(name);
 
-    // Adiciona evento de clique para abrir o popup
     marker.on('click', function() {
-        this.openPopup(); // Apenas abre o popup que exibe o nome do marcador
+        this.openPopup();
     });
 
-    // Adiciona evento de duplo clique para remover o marcador
     marker.on('dblclick', function() {
-        map.removeLayer(this); // Remove o marcador do mapa
+        map.removeLayer(this);
 
-        // Remove o marcador do array de marcadores
         var index = markers.indexOf(this);
         if (index !== -1) {
             markers.splice(index, 1);
         }
-        removeCard(marker.markerId); // Remove o card associado
+        removeCard(marker.markerId);
     });
 
-    // Adiciona um card ao menu lateral
     addCard(marker.markerId, name, description, address, routeUrl, imageUrl);
 
-    map.closePopup(); // Fecha o popup
+    map.closePopup();
 }
 
-// Função para adicionar um card ao menu lateral
+// Função para adicionar cards ao menu lateral
 function addCard(markerId, name, description, address, routeUrl, imageUrl) {
     var sidebar = document.getElementById('sidebar');
     var card = document.getElementById('card-' + markerId);
     if (card) {
-        // Se o card já existir, atualiza o conteúdo
         card.innerHTML = `
             <h3>${name}</h3>
             <p><strong>Descrição:</strong> ${description}</p>
@@ -130,7 +123,6 @@ function addCard(markerId, name, description, address, routeUrl, imageUrl) {
             <button onclick="window.open('${routeUrl}', '_blank')">Obter Rota</button>
         `;
     } else {
-        // Se o card não existir, cria um novo
         card = document.createElement('div');
         card.className = 'card';
         card.id = 'card-' + markerId;
@@ -145,7 +137,7 @@ function addCard(markerId, name, description, address, routeUrl, imageUrl) {
     }
 }
 
-// Função para remover um card do menu lateral
+// Função para remover cards do menu lateral
 function removeCard(markerId) {
     var card = document.getElementById('card-' + markerId);
     if (card) {
@@ -153,16 +145,16 @@ function removeCard(markerId) {
     }
 }
 
-// Função para gerar um ID único para cada marcador
+// Função para gerar IDs únicos
 function generateUniqueId() {
     return 'marker-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
 }
 
-// Função para criar o menu de filtro
+// Função para criar o menu de filtros
 function createFilterMenu() {
     var sidebar = document.getElementById('sidebar');
-    
-    // Remove o menu de filtro existente, se houver
+
+    // Remove o menu de filtro existente
     var existingFilterMenu = document.querySelector('.filter-menu');
     if (existingFilterMenu) {
         existingFilterMenu.remove();
@@ -179,7 +171,6 @@ function createFilterMenu() {
             <option value="Farmacia">Farmácia Pública</option>
             <option value="Abrigo">Abrigo</option>
             <option value="Reabilitação">Centro de Reabilitação</option>
-            <!-- Adicione mais opções conforme necessário -->
         </select>
     `;
     sidebar.appendChild(filterMenu);
@@ -187,18 +178,15 @@ function createFilterMenu() {
 
 // Função para filtrar os marcadores por tipo
 function filterMarkersByType(selectedType) {
-    // Filtra e exibe os marcadores correspondentes ao tipo selecionado
     markers.forEach(marker => {
         var card = document.getElementById('card-' + marker.markerId);
         if (selectedType === 'Todos' || marker.type === selectedType) {
-            // Adiciona ou mantém o card visível
             if (!card) {
                 addCard(marker.markerId, marker.name, marker.description, marker.address, marker.routeUrl, marker.imageUrl);
             } else {
                 card.style.display = 'block';
             }
         } else {
-            // Oculta o card que não corresponde ao filtro
             if (card) {
                 card.style.display = 'none';
             }
@@ -209,16 +197,16 @@ function filterMarkersByType(selectedType) {
 // Função para abrir o menu lateral
 function openSidebar() {
     document.getElementById("sidebar").style.left = "0";
-    document.getElementById("openSidebarBtn").style.left = "320px"; // Ajusta a posição do ícone quando o menu está aberto
+    document.getElementById("openSidebarBtn").style.left = "320px";
 }
 
 // Função para fechar o menu lateral
 function closeSidebar() {
     document.getElementById("sidebar").style.left = "-400px";
-    document.getElementById("openSidebarBtn").style.left = "15px"; // Ajusta a posição do ícone quando o menu está fechado
+    document.getElementById("openSidebarBtn").style.left = "15px";
 }
 
-// Função para alternar o menu lateral e o ícone sanduíche
+// Função para alternar o estado do menu lateral
 function toggleSidebar(x) {
     x.classList.toggle("change");
     if (document.getElementById("sidebar").style.left === "0px") {
@@ -228,5 +216,60 @@ function toggleSidebar(x) {
     }
 }
 
-// Chama a função para inicializar o mapa quando a página estiver carregada
-document.addEventListener('DOMContentLoaded', initMap);
+// Função para carregar os marcadores a partir do JSON
+function loadMarkers() {
+    fetch('marcadores.json')
+        .then(response => response.json())
+        .then(data => {
+            data.marcadores.forEach(marcador => {
+                // Adiciona cada marcador ao mapa
+                var marker = L.marker([marcador.lat, marcador.lng]).addTo(map);
+                marker.markerId = generateUniqueId();
+                marker.name = marcador.nome;
+                marker.description = marcador.descricao;
+                marker.address = marcador.endereco;
+                marker.routeUrl = marcador.urlRota;
+                marker.type = marcador.tipo;
+                marker.hasInfo = true;
+
+                // Adiciona um popup ao marcador que exibe o nome
+                marker.bindPopup(marcador.nome);
+
+                // Adiciona evento de clique para abrir o popup
+                marker.on('click', function() {
+                    this.openPopup();
+                });
+
+                // Adiciona o marcador ao array de marcadores
+                markers.push(marker);
+
+                // Adiciona um card ao menu lateral
+                addCard(marker.markerId, marcador.nome, marcador.descricao, marcador.endereco, marcador.urlRota, marcador.imagem);
+            });
+        })
+        .catch(error => console.error('Erro ao carregar o JSON:', error));
+}
+
+// Função para filtrar marcadores por nome
+function filterMarkersByName(searchText) {
+    markers.forEach(marker => {
+        var card = document.getElementById('card-' + marker.markerId);
+        if (marker.name.toLowerCase().includes(searchText.toLowerCase())) {
+            if (!card) {
+                addCard(marker.markerId, marker.name, marker.description, marker.address, marker.routeUrl, marker.imageUrl);
+            } else {
+                card.style.display = 'block';
+            }
+        } else {
+            if (card) {
+                card.style.display = 'none';
+            }
+        }
+    });
+}
+
+// Chama a função para inicializar o mapa e carregar os marcadores ao carregar a página
+document.addEventListener('DOMContentLoaded', function() {
+    initMap();
+    loadMarkers();
+});
