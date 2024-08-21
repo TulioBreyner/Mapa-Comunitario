@@ -26,6 +26,8 @@ function initMap() {
 }
 
 // Função para abrir o popup de informações ao clicar no mapa
+// Está comentada para garantir que o usuario não consiga adicionar locais localmente, já que não ficará salvo
+/*
 function openInfoPopup(coords) {
     var popupContent = `
         <div>
@@ -59,7 +61,9 @@ function openInfoPopup(coords) {
         .openOn(map);
 }
 
+
 // Função para salvar as informações do marcador
+// Está comentada para garantir que o usuario não consiga adicionar locais localmente, já que não ficará salvo
 function saveMarkerInfo(lat, lng) {
     var name = document.getElementById('popupName').value;
     var description = document.getElementById('popupDescription').value;
@@ -109,6 +113,7 @@ function saveMarkerInfo(lat, lng) {
 
     map.closePopup();
 }
+*/
 
 // Função para adicionar cards ao menu lateral
 function addCard(markerId, name, description, address, routeUrl, imageUrl) {
@@ -133,6 +138,7 @@ function addCard(markerId, name, description, address, routeUrl, imageUrl) {
             ${imageUrl ? `<img src="${imageUrl}" alt="Imagem do marcador">` : ''}
             <button onclick="window.open('${routeUrl}', '_blank')">Obter Rota</button>
         `;
+
         sidebar.appendChild(card);
     }
 }
@@ -167,10 +173,12 @@ function createFilterMenu() {
         <select id="filterType" onchange="filterMarkersByType(this.value)">
             <option value="Todos">Todos</option>
             <option value="Hospital">Hospital</option>
-            <option value="UBS">UBS</option>
-            <option value="Farmacia">Farmácia Pública</option>
-            <option value="Abrigo">Abrigo</option>
+            <option value="PostoSaude">Posto de saúde</option>
+            <option value="Farmacia">Farmácia</option>
+            <option value="CentroApoio">Centro de Apoio</option>
             <option value="Reabilitação">Centro de Reabilitação</option>
+            <option value="AssistenciaPublica">Assistência pública</option>
+            <option value="Outros">Outros</option>
         </select>
     `;
     sidebar.appendChild(filterMenu);
@@ -186,13 +194,16 @@ function filterMarkersByType(selectedType) {
             } else {
                 card.style.display = 'block';
             }
+            marker.addTo(map);  // Exibe o marcador no mapa
         } else {
             if (card) {
                 card.style.display = 'none';
             }
+            map.removeLayer(marker);  // Remove o marcador do mapa
         }
     });
 }
+
 
 // Função para abrir o menu lateral
 function openSidebar() {
@@ -260,10 +271,12 @@ function filterMarkersByName(searchText) {
             } else {
                 card.style.display = 'block';
             }
+            marker.addTo(map);  // Exibe o marcador no mapa
         } else {
             if (card) {
                 card.style.display = 'none';
             }
+            map.removeLayer(marker);  // Remove o marcador do mapa
         }
     });
 }
