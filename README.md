@@ -15,7 +15,7 @@ O **MAPA COMUNITÁRIO** é mais do que apenas um mapa. Ele é uma ferramenta pen
 - 🤖 **ChatGPT**: Suporte no desenvolvimento  
 - 🛠️ **VS Code**: Ambiente de desenvolvimento
 
-🔗 **Veja o projeto em ação aqui**: [temporariamente inativo]  
+🔗 **Veja o projeto em ação aqui**: [Mapa Comunitário](https://mapacomunitario.vercel.app/) 
 
 ---
 
